@@ -38,12 +38,22 @@ const properties = [
 
 export const FeaturedProperties = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30 paisley-pattern relative">
+      {/* Decorative elements */}
+      <div className="absolute top-8 left-8 text-4xl text-gold/20">🕉️</div>
+      <div className="absolute top-12 right-12 text-3xl text-primary/20">🪷</div>
+      <div className="absolute bottom-16 left-16 text-3xl text-secondary/20">🏛️</div>
+      <div className="absolute bottom-20 right-20 text-4xl text-accent/20">✨</div>
+      
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Featured Properties
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="text-3xl text-gold">🪷</div>
+            <h2 className="text-4xl md:text-5xl font-bold heritage-text">
+              Featured Properties
+            </h2>
+            <div className="text-3xl text-gold">🪷</div>
+          </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover our handpicked collection of premium properties that embody luxury and tradition
           </p>

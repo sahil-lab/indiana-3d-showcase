@@ -6,13 +6,25 @@ import heroImage from '@/assets/hero-palace.jpg';
 
 export const Hero = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-muted to-background">
+    <div className="relative min-h-screen overflow-hidden ornate-frame paisley-pattern">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-royal/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-gold/10 to-royal/20" />
+      
+      {/* Indian decorative elements */}
+      <div className="absolute top-8 left-8 text-6xl text-gold/40 select-none animate-pulse">🕉️</div>
+      <div className="absolute top-16 right-16 text-5xl text-gold/30 select-none rotate-45">✨</div>
+      <div className="absolute bottom-20 left-20 text-4xl text-gold/25 select-none">🪷</div>
+      <div className="absolute bottom-24 right-24 text-5xl text-gold/30 select-none">🏛️</div>
+      
+      {/* Corner ornaments */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-gold/20 to-transparent rounded-br-full opacity-80"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold/20 to-transparent rounded-bl-full opacity-80"></div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-gold/20 to-transparent rounded-tr-full opacity-80"></div>
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-gold/20 to-transparent rounded-tl-full opacity-80"></div>
       
       {/* 3D Canvas */}
       <div className="absolute inset-0 opacity-60">
@@ -24,19 +36,32 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
-            Heritage Homes
-          </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto font-medium">
-            Discover luxurious properties that blend traditional Indian architecture with modern elegance
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="saffron" size="lg" className="text-lg px-8 py-3">
-              Explore Properties
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative">
+          {/* Decorative elements around title */}
+          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-5xl text-gold/50 animate-pulse">👑</div>
+          
+          <div className="relative">
+            <div className="absolute -top-8 -left-8 text-3xl text-gold/60">🪷</div>
+            <h1 className="text-6xl md:text-8xl font-bold heritage-text leading-tight relative lotus-glow">
+              Heritage Homes
+            </h1>
+            <div className="absolute -bottom-8 -right-8 text-3xl text-gold/60">🪷</div>
+          </div>
+          
+          <div className="relative max-w-2xl mx-auto">
+            <div className="absolute -left-12 top-1/2 transform -translate-y-1/2 text-2xl text-gold/40">🕉️</div>
+            <p className="text-xl md:text-2xl text-foreground/90 font-light leading-relaxed">
+              Discover palatial residences that blend timeless Indian architecture with supreme luxury
+            </p>
+            <div className="absolute -right-12 top-1/2 transform -translate-y-1/2 text-2xl text-gold/40">🕉️</div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+            <Button variant="saffron" size="lg" className="text-lg px-10 py-4 lotus-glow">
+              🏛️ Explore Properties
             </Button>
-            <Button variant="elegant" size="lg" className="text-lg px-8 py-3">
-              Schedule Visit
+            <Button variant="royal" size="lg" className="text-lg px-10 py-4 lotus-glow">
+              📅 Schedule Visit
             </Button>
           </div>
         </div>

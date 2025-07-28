@@ -53,13 +53,18 @@ All colors MUST be HSL.
     --gradient-royal: linear-gradient(135deg, hsl(217 91% 40%), hsl(230 91% 50%));
     --gradient-emerald: linear-gradient(135deg, hsl(158 64% 52%), hsl(168 76% 42%));
     --gradient-sunset: linear-gradient(135deg, hsl(28 100% 58%), hsl(0 84% 50%));
+    --gradient-palace: linear-gradient(45deg, hsl(28 100% 58%), hsl(45 100% 50%), hsl(217 91% 40%));
+    --gradient-royal-silk: linear-gradient(135deg, hsl(217 91% 40%), hsl(270 100% 30%), hsl(320 100% 40%));
     
     /* Traditional pattern shadows */
     --shadow-mandala: 0 20px 40px -10px hsl(28 100% 58% / 0.3);
     --shadow-royal: 0 20px 40px -10px hsl(217 91% 40% / 0.3);
+    --shadow-ornate: 0 30px 60px -12px hsl(45 100% 50% / 0.4), 0 18px 36px -18px hsl(28 100% 58% / 0.3);
+    --shadow-palace: 0 35px 70px -15px hsl(217 91% 40% / 0.5), inset 0 1px 0 hsl(45 100% 50% / 0.2);
     
     /* Smooth transitions */
     --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-palace: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 
     --radius: 0.75rem;
 
@@ -126,5 +131,79 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  /* Indian ornamental patterns */
+  .mandala-border {
+    position: relative;
+  }
+  
+  .mandala-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-palace);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  
+  .ornate-frame {
+    background: 
+      radial-gradient(circle at 25% 25%, hsl(45 100% 50% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, hsl(28 100% 58% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 25% 75%, hsl(217 91% 40% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(158 64% 52% / 0.1) 0%, transparent 50%);
+  }
+  
+  .paisley-pattern {
+    background-image: 
+      radial-gradient(ellipse 30px 60px at 50% 50%, hsl(45 100% 50% / 0.1) 40%, transparent 50%),
+      radial-gradient(ellipse 20px 40px at 25% 75%, hsl(28 100% 58% / 0.08) 30%, transparent 40%),
+      radial-gradient(ellipse 25px 50px at 75% 25%, hsl(217 91% 40% / 0.08) 35%, transparent 45%);
+    background-size: 120px 120px, 80px 80px, 100px 100px;
+    background-position: 0 0, 40px 40px, 60px 20px;
+  }
+  
+  .lotus-glow {
+    box-shadow: 
+      0 0 20px hsl(45 100% 50% / 0.3),
+      0 0 40px hsl(28 100% 58% / 0.2),
+      0 0 60px hsl(217 91% 40% / 0.1);
+  }
+  
+  .palace-card {
+    background: linear-gradient(145deg, 
+      hsl(var(--card)) 0%, 
+      hsl(var(--card)) 70%, 
+      hsl(45 100% 50% / 0.02) 100%);
+    border: 1px solid hsl(45 100% 50% / 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .palace-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-palace);
+  }
+  
+  .heritage-text {
+    background: var(--gradient-palace);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
 }
