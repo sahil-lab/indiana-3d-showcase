@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Sphere, Box, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
 const FloatingElement = ({ position, color, geometry }: { position: [number, number, number], color: string, geometry: 'sphere' | 'box' | 'torus' }) => {
@@ -14,26 +13,25 @@ const FloatingElement = ({ position, color, geometry }: { position: [number, num
     }
   });
 
-  const renderGeometry = () => {
+  const getGeometry = () => {
     switch (geometry) {
       case 'sphere':
-        return <Sphere ref={meshRef} args={[0.3]} position={position}>
-          <meshStandardMaterial color={color} metalness={0.7} roughness={0.2} />
-        </Sphere>;
+        return <sphereGeometry args={[0.3, 32, 32]} />;
       case 'box':
-        return <Box ref={meshRef} args={[0.4, 0.4, 0.4]} position={position}>
-          <meshStandardMaterial color={color} metalness={0.8} roughness={0.1} />
-        </Box>;
+        return <boxGeometry args={[0.4, 0.4, 0.4]} />;
       case 'torus':
-        return <Torus ref={meshRef} args={[0.3, 0.1]} position={position}>
-          <meshStandardMaterial color={color} metalness={0.6} roughness={0.3} />
-        </Torus>;
+        return <torusGeometry args={[0.3, 0.1, 16, 100]} />;
       default:
-        return null;
+        return <sphereGeometry args={[0.3, 32, 32]} />;
     }
   };
 
-  return renderGeometry();
+  return (
+    <mesh ref={meshRef} position={position}>
+      {getGeometry()}
+      <meshStandardMaterial color={color} metalness={0.7} roughness={0.2} />
+    </mesh>
+  );
 };
 
 export const FloatingElements = () => {
