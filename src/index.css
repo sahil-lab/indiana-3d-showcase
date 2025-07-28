@@ -8,35 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Indian-themed color palette */
+    --background: 45 20% 97%;
+    --foreground: 20 14% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 14% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 14% 4%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Saffron primary */
+    --primary: 28 100% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Deep red secondary */
+    --secondary: 0 84% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 20% 95%;
+    --muted-foreground: 20 14% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Emerald accent */
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 20% 89%;
+    --input: 45 20% 89%;
+    --ring: 28 100% 58%;
 
-    --radius: 0.5rem;
+    /* Royal blue variant */
+    --royal: 217 91% 40%;
+    --royal-foreground: 0 0% 100%;
+
+    /* Gold accents */
+    --gold: 45 100% 50%;
+    --gold-foreground: 20 14% 4%;
+
+    /* Indian-inspired gradients */
+    --gradient-saffron: linear-gradient(135deg, hsl(28 100% 58%), hsl(38 100% 65%));
+    --gradient-royal: linear-gradient(135deg, hsl(217 91% 40%), hsl(230 91% 50%));
+    --gradient-emerald: linear-gradient(135deg, hsl(158 64% 52%), hsl(168 76% 42%));
+    --gradient-sunset: linear-gradient(135deg, hsl(28 100% 58%), hsl(0 84% 50%));
+    
+    /* Traditional pattern shadows */
+    --shadow-mandala: 0 20px 40px -10px hsl(28 100% 58% / 0.3);
+    --shadow-royal: 0 20px 40px -10px hsl(217 91% 40% / 0.3);
+    
+    /* Smooth transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +81,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 14% 4%;
+    --foreground: 45 20% 97%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 14% 8%;
+    --card-foreground: 45 20% 97%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 14% 8%;
+    --popover-foreground: 45 20% 97%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 28 100% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 84% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 14% 12%;
+    --muted-foreground: 45 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 20 14% 18%;
+    --input: 20 14% 18%;
+    --ring: 28 100% 58%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
